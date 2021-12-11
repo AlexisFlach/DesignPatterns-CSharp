@@ -55,7 +55,6 @@ namespace OpenClosed
         }
     }
 
-
     public class FilterProducts : IFilter<Product>
     {
         public IEnumerable<Product> Filter(IEnumerable<Product> items, ISpecification<Product> spec)
@@ -95,7 +94,6 @@ namespace OpenClosed
             Size = size;
         }
     }
-
 
     public class Products
     {

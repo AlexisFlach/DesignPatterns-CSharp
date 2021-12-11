@@ -83,88 +83,39 @@ Efter ha använt denna teknik kan vi ha en design som ser ut såhär:
 
 **Classes should be open for extension but closed for modification**
 
-Filtrera produkter:
 
-```
-    public enum Color
-    {
-        Red, Green, Blue
-    }
-```
 
-```
-    public enum Size
-    {
-        Small, Medium, Large
-    }
-```
 
-```c#
-    public class Product
-    {
-        public string Name;
-        public Color Color;
-        public Size Size;
 
-        public Product(string name, Color color, Size size)
-        {
-            Name = name;
-            Color = color;
-            Size = size;
-        }
-    }
-```
 
-```c#
-    public class ProductFilter
-    {
-        public static IEnumerable<Product> FilterBySize(IEnumerable<Product> 			products, Size size)
-        {
-            List<Product> filterProducts = new() { };
-            foreach (Product p in products)
-            {
-                if (p.Size == size)
-                {
-                    filterProducts.Add(p);
-                }
-            }
-            return filterProducts;
-        }
-```
 
-Om vi vill lägga till en funktion för att även filtrera färg, måste vi gå in i ProductFilter och modifiera detta.
 
-```c#
-        public static IEnumerable<Product> FilterBySize(IEnumerable<Product> 			products, Size size)
-        {
-            List<Product> filterProducts = new() { };
-            foreach (Product p in products)
-            {
-                if (p.Size == size)
-                {
-                    filterProducts.Add(p);
-                }
-            }
-            return filterProducts;
-        }
-        public static IEnumerable<Product FilterByColor(IEnumerable<Product> 			products, Color color)
-        {
-            List<Product> filterProducts = new() { };
-            foreach (Product p in products)
-            {
-                if (p.Color == color)
-                {
-                    filterProducts.Add(p);
-                }
-            }
-            return filterProducts;
-        }
-    }
-```
 
-**The only constant is change**. Nu får vi till oss att ProductFilter även ska kunna filtrera färg OCH storlekt på samma gång.
 
-Detta bryter återigen **Open/Closed principle**. Vi vill kunna extenda funkltionaliteten genom att kunna utföra denna filtrering, men vi vill inte gå in och modifiera detta i vår ProductFilter-klass.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.youtube.com/watch?v=id_Ltb6EbvU&ab_channel=CodeRadiance
+
+https://www.youtube.com/watch?v=-ptMtJAdj40&t=417s&ab_channel=WebDevSimplified
+
+https://www.udemy.com/course/design-patterns-csharp-dotnet
+
+
 
 
 
