@@ -89,9 +89,9 @@ Efter ha använt denna teknik kan vi ha en design som ser ut såhär:
 
 Denna princip handlar om väldesignada arv. När vi ärver från en basklass, måste vi kunna byta ut våra subklasser mot den basklassen utan problem.
 
+#### Interface Segregation Principle
 
-
-
+**No code should be forced to depend on methods it does not use**
 
 
 
@@ -121,7 +121,7 @@ https://www.udemy.com/course/design-patterns-csharp-dotnet
 
 https://www.youtube.com/watch?v=70qA7XPAuNE&ab_channel=CodeRadiance
 
-
+https://www.youtube.com/watch?v=J6dWkStHEWk&ab_channel=CodeRadiance
 
 
 
