@@ -12,6 +12,7 @@ namespace OpenClosed.GoodOpenClosedPizza
         public void MakePizza(Pizza pizza)
         {
             Console.WriteLine("Making {0} Pizza", pizza._pizzaType);
+            pizza.SetIngredients("Cheese", "Ham");
             pizza.Make(_oven);
         }
     }
@@ -21,7 +22,7 @@ namespace OpenClosed.GoodOpenClosedPizza
         {
 
         }
-        protected override void SetIngredients(params string[] ingredients)
+        public override void SetIngredients(params string[] ingredients)
         {
             base._ingredients = new PizzaIngredients(ingredients);
         }
@@ -38,7 +39,7 @@ namespace OpenClosed.GoodOpenClosedPizza
             _pizzaType = type;
         }
 
-        protected virtual void SetIngredients(params string[] ingredients)
+        public virtual void SetIngredients(params string[] ingredients)
         {
 
         }
@@ -58,6 +59,7 @@ namespace OpenClosed.GoodOpenClosedPizza
     {
         public void Bake(PizzaIngredients ingredients)
         {
+            
         }
     }
 

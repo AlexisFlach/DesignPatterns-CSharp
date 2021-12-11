@@ -83,7 +83,11 @@ Efter ha använt denna teknik kan vi ha en design som ser ut såhär:
 
 **Classes should be open for extension but closed for modification**
 
+#### Liskow Substititution Principle
 
+**Subtypes must be substitutable for their base types**
+
+Denna princip handlar om väldesignada arv. När vi ärver från en basklass, måste vi kunna byta ut våra subklasser mot den basklassen utan problem.
 
 
 
@@ -115,7 +119,7 @@ https://www.youtube.com/watch?v=-ptMtJAdj40&t=417s&ab_channel=WebDevSimplified
 
 https://www.udemy.com/course/design-patterns-csharp-dotnet
 
-
+https://www.youtube.com/watch?v=70qA7XPAuNE&ab_channel=CodeRadiance
 
 
 
