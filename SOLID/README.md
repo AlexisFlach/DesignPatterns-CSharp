@@ -4,7 +4,9 @@
 
 **Every object in your system should have a single responsibility, and all the object's services should be focused on carrying out that single responsibility**.
 
-Man brukar säga att en klass endast ska en anledning att ändras.
+Man brukar säga att en klass endast ska en anledning till att ändras.
+
+Vi kan sätta ett likhets tecken mellan ansvarsområde och "anledning att till att ändras".
 
 ```c#
 	public class Car
@@ -27,7 +29,9 @@ Man brukar säga att en klass endast ska en anledning att ändras.
     }
 ```
 
-En teknik vi kan använda för att se om en klass har flera ansvarsområden är att skriva ned följande och beskriva följande:
+En teknik vi kan använda oss av för att försäkra oss om att vi följer denna princip är att fråga oss vad ansvarsområder för vår klass är. Om vi i svaret säger "och" så bryter vi förmodligen mot principen.
+
+En anna teknik vi kan använda för att se om en klass har flera ansvarsområden är att skriva ned följande och beskriva följande:
 
 ```
 Bilen startar(Start()) sig själv
@@ -74,6 +78,121 @@ Efter ha använt denna teknik kan vi ha en design som ser ut såhär:
         }
     }
 ```
+
+#### Open/Closed Principle
+
+**Classes should be open for extension but closed for modification**
+
+Filtrera produkter:
+
+```
+    public enum Color
+    {
+        Red, Green, Blue
+    }
+```
+
+```
+    public enum Size
+    {
+        Small, Medium, Large
+    }
+```
+
+```c#
+    public class Product
+    {
+        public string Name;
+        public Color Color;
+        public Size Size;
+
+        public Product(string name, Color color, Size size)
+        {
+            Name = name;
+            Color = color;
+            Size = size;
+        }
+    }
+```
+
+```c#
+    public class ProductFilter
+    {
+        public static IEnumerable<Product> FilterBySize(IEnumerable<Product> 			products, Size size)
+        {
+            List<Product> filterProducts = new() { };
+            foreach (Product p in products)
+            {
+                if (p.Size == size)
+                {
+                    filterProducts.Add(p);
+                }
+            }
+            return filterProducts;
+        }
+```
+
+Om vi vill lägga till en funktion för att även filtrera färg, måste vi gå in i ProductFilter och modifiera detta.
+
+```c#
+        public static IEnumerable<Product> FilterBySize(IEnumerable<Product> 			products, Size size)
+        {
+            List<Product> filterProducts = new() { };
+            foreach (Product p in products)
+            {
+                if (p.Size == size)
+                {
+                    filterProducts.Add(p);
+                }
+            }
+            return filterProducts;
+        }
+        public static IEnumerable<Product FilterByColor(IEnumerable<Product> 			products, Color color)
+        {
+            List<Product> filterProducts = new() { };
+            foreach (Product p in products)
+            {
+                if (p.Color == color)
+                {
+                    filterProducts.Add(p);
+                }
+            }
+            return filterProducts;
+        }
+    }
+```
+
+**The only constant is change**. Nu får vi till oss att ProductFilter även ska kunna filtrera färg OCH storlekt på samma gång.
+
+Detta bryter återigen **Open/Closed principle**. Vi vill kunna extenda funkltionaliteten genom att kunna utföra denna filtrering, men vi vill inte gå in och modifiera detta i vår ProductFilter-klass.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,4 @@
+﻿using OpenClosed;
+
+
+Quiz.Run();
