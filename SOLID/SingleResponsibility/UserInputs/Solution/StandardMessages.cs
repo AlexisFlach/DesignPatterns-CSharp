@@ -9,6 +9,7 @@ namespace SingleResponsibility.UserInputs.Solution
         }
         public static void EndApplication()
         {
+            Console.Write("Press enter to close");
             Console.ReadLine();
         }
 

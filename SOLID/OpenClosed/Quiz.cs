@@ -85,4 +85,4 @@ public class Quiz {
         SetupGame.PrintQuestions(multiple,rightOrWrong );
         SetupGame.StartGame();
     }
-}
+} 

@@ -1,9 +1,5 @@
-﻿using OpenClosed;
-using OpenClosed.Pizza;
-using OpenClosed.GoodOpenClosedPizza;
+﻿using OpenClosed.Applicants.Setup;
+using OpenClosed.Applicants.Solution;
 
-// Products.Run();
-// Quiz.Run();
-// BadPizza.Run();
 
-GoodOpenClosedPizza.Run();
+Solution.Run();

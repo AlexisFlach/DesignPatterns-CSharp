@@ -9,7 +9,7 @@ Man brukar säga att en klass endast ska en anledning till att ändras.
 Vi kan sätta ett likhets tecken mellan ansvarsområde och "anledning att till att ändras".
 
 ```c#
-	public  class Car
+	public abstract class Car
     {
         public abstract void Start();
         public abstract void Stop();
@@ -54,57 +54,72 @@ En viktig sak att tänka på när det gäller SRP är att när vi talar om en an
         }
         public static void EndApplication()
         {
+            Console.Write("Press enter to close");
             Console.ReadLine();
         }
 
-        public static void DisplayValidationError(string fieldName) => 				Console.WriteLine($"Please enter a valid {fieldName}");
+        public static void DisplayValidationError(string fieldName) => Console.WriteLine($"Please enter a valid {fieldName}");
     }
-}
 ```
 
 #### Open/Closed Principle
 
 **Classes should be open for extension but closed for modification**.
 
-Se följande PizzaStore klass:
+**Från**
 
 ```
-  class PizzaStore
-    {
-        private PizzaOven _oven;
-        public PizzaStore()
+      public static void Run()
         {
-            _oven = new PizzaOven();
-        }
+            List<Person> _applicants = new List<Person>
+        {
+            new Person {Name="Hank", },
+            new Person {Name="Tank", EmployeeType = EmployeeType.Manager},
+            new Person {Name= "Frank", EmployeeType= EmployeeType.Executive}
+        };
+            List<Employee> _employees = new List<Employee>();
+            Accounts accountProcessor = new Accounts();
 
-        public void MakePizza(PizzaType type)
-        {
-            PizzaIngredients pizzaIngredients;
-            switch (type)
+            foreach (var person in _applicants)
             {
-                case PizzaType.American:
-                    pizzaIngredients = new PizzaIngredients("Tripple 						cheese", "Bacon");
-                    _oven.Bake(pizzaIngredients);
-                    break;
-                case PizzaType.Italian:
-                    pizzaIngredients = new PizzaIngredients("Tomato Sauce", 					"Cheese");
-                    _oven.Bake(pizzaIngredients);
-                    break;
-                case PizzaType.Vegetarian:
-                    pizzaIngredients = new PizzaIngredients("Sallad");
-                    _oven.Bake(pizzaIngredients);
-                    break;
-                default:
-                    break;
+                _employees.Add(accountProcessor.Create(person));
+            }
+            foreach (var emp in _employees)
+            {
+                System.Console.WriteLine($"{emp.Name}: {emp.Email}  IsManager: {emp.IsManager}  IsExecutive: {emp.IsExecutive}");
+            }
+        }
+```
 
+**Till**
+
+```
+    public class Solution
+    {
+        public static void Run()
+        {
+            List<IApplicant> _applicants = new List<IApplicant>
+        {
+            new Person {Name="Hank", },
+            new Executive {Name="Tank"},
+            new Manager {Name= "Frank"}
+        };
+            List<Employee> _employees = new List<Employee>();
+
+            foreach (var person in _applicants)
+            {
+                _employees.Add(person.AccountProcessor.Create(person));
+            }
+            foreach (var emp in _employees)
+            {
+                System.Console.WriteLine($"{emp.Name}: {emp.Email}  IsManager: {emp.IsManager}  IsExecutive: {emp.IsExecutive}");
             }
         }
     }
+
 ```
 
-**Övning**
 
-För endast PizzaTypes: Vegeterian, Italian och American funkar den perfekt, men vad händer om vi vill lägga till fler pizzasorter? Då måste vi in och modifiera koden, ex. lägga till ett nytt switch-case. Klassen är med andra ord inte stängd för modifiering. Vad vi vill är att den ska vara öppen för extensions, alltså att vi ska kunna lägga till en pizzatype, men utan öppna upp klassen.
 
 #### Liskow Substititution Principle
 
