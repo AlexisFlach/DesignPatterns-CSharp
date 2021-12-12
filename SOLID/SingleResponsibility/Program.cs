@@ -1,5 +1,6 @@
-﻿using System;
-using SingleResponsibility;
+﻿using SingleResponsibility.UserInputs.Setup;
 
 
-JournalSimulator.Run();
+// JournalSimulator.Run();
+
+Setup.Main();

@@ -1,8 +1,8 @@
 using System;
 
-namespace SingleResponsibility
+namespace SingleResponsibility.Cars.Solution
 {   
-    public  class Car
+    public class Car
     {
         public void Start() {
             System.Console.WriteLine("The car is starting!!");

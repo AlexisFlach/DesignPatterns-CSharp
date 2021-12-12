@@ -1,9 +1,9 @@
 namespace OpenClosed.Pizza
 {
-    class PizzaMaker
+    class PizzaStore
     {
         private PizzaOven _oven;
-        public PizzaMaker()
+        public PizzaStore()
         {
             _oven = new PizzaOven();
         }
@@ -68,8 +68,8 @@ namespace OpenClosed.Pizza
     {
         public static void Run()
         {
-            var pizzaMaker = new PizzaMaker();
-            pizzaMaker.MakePizza(PizzaType.American);
+            var pizzaStore = new PizzaStore();
+            pizzaStore.MakePizza(PizzaType.American);
         }
 
     }

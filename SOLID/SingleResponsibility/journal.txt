@@ -1,3 +1,0 @@
-1: Trying to learn the SRP
-2: Getting there...
-3: Got it!
