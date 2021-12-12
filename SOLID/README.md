@@ -130,36 +130,42 @@ Denna princip handlar om v채ldesignada arv. N채r vi 채rver fr책n en basklass, m�
 Det handlar mer om beteende, 채n attribut.
 
 ```
-class HealthyActivity
-{
-	public virtual void Enjoy() {};
-	public void FeelFresh() {
-	...
-	};
-}
-```
-
-```
-class SmokingACigarette : HealthyActivity
-{
-	public overide void Enjoy()
-	{
-		ConsoleWrite("Enjoying my cigarette");
-	}
-	public void SpendMoney() 
-	{
-	...
-	}
-	public void IncreaseBadHealth()
+ class HealthyActivity
     {
-    ...
+        public void Enjoy()
+        {
+            System.Console.WriteLine("I am enjoying this activity!!");
+        }
+        public virtual void FeelFresh()
+        {
+            System.Console.WriteLine("This activity is making me feel fresh!!");
+        }
     }
-	
-}
 ```
 
 ```
-HealthyActivity smoking = new SmokingACigarette();
+    class SmokingActivity : HealthyActivity
+    {
+        public void Enjoy()
+        {
+            System.Console.WriteLine("I am enjoying this activity!!");
+        }
+        public override void FeelFresh()
+        {
+            throw new InvalidOperationException("Smoking doesn't make you feel fresh");
+        }
+    }
+```
+
+```
+            HealthyActivity healthyActivity = new HealthyActivity();
+            healthyActivity.Enjoy();
+            healthyActivity.FeelFresh();
+            HealthyActivity smokingActivity = new SmokingActivity();
+            smokingActivity.Enjoy();
+            smokingActivity.FeelFresh();
+            
+            Unhandled exception. System.InvalidOperationException: Smoking doesn't make you feel fresh
 ```
 
 
@@ -215,7 +221,7 @@ https://www.youtube.com/watch?v=70qA7XPAuNE&ab_channel=CodeRadiance
 
 https://www.youtube.com/watch?v=J6dWkStHEWk&ab_channel=CodeRadiance
 
-
+https://www.youtube.com/watch?v=-3UXq2krhyw
 
 
 

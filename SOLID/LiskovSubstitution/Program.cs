@@ -1,3 +1,4 @@
 ﻿using LiskovSubstitution;
 
 
+Smokes.Run();
