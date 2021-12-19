@@ -27,4 +27,6 @@ Identifierar kommunikationsmönster mellan objekt.
 
 1. SOLID
 
-	[Solid](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID) - _Solid
+Läs igenom texten om SOLID.
+
+	[Solid](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID) - SOLID README

@@ -1,5 +1,9 @@
 # SOLID
 
+SOLID är en samling designprinciper som används i OOP. Principerna bakom SOLID togs fram av Robert C. Martin år 2000 och tar fasta på det faktum software förändras, och därmed bli mer komplext. 
+
+Utan goda designprinciper kommer system få svårt att hantera dessa förändringar. Det stora målet med SOLID är att minska beroenden, så att när en del av applikationen förändras så påverkar inte det övrig kod. Övriga nyttor är att designen blir enklare att underhålla och förlänga.
+
 #### Single Responsibility Principle
 
 **Every object in your system should have a single responsibility, and all the object's services should be focused on carrying out that single responsibility**.
@@ -42,92 +46,83 @@ Bilen byter däck (ChangeTires(Tire tire)) på sig själv
 
 Tänk sedan på om det är rimligt att exempelvis en bil byter däck på sig själv. Om det är det bockar vi för exempelvis "Ja, det är rimligt att bilen startar sig själv och metoden kommer att finnas kvar då det följer **Single Responsibility Principle**".
 
-En viktig sak att tänka på när det gäller SRP är att när vi talar om en anledning att ändras, så pratar vi inte om antalet metoder i en klass, utan antal ansvarsområden:
+En viktig sak att tänka på när det gäller SRP är att när vi talar om en anledning att ändras, så pratar vi inte om antalet metoder i en klass, utan antal ansvarsområden.
 
-**Klass som följer SRP**
-
-```
-    public class StandardMessages
-    {
-        public static void WelcomeMessage() {
-           Console.WriteLine("Welcome to my Application");
-        }
-        public static void EndApplication()
-        {
-            Console.Write("Press enter to close");
-            Console.ReadLine();
-        }
-
-        public static void DisplayValidationError(string fieldName) => Console.WriteLine($"Please enter a valid {fieldName}");
-    }
-```
+Vi uppnår detta genom att använda små klasser med begränsade mål. Varje klass är alltså nöjd med att *endast* utföra en sak, men att utföra den saken väldigt bra.
 
 #### Open/Closed Principle
 
 **Classes should be open for extension but closed for modification**.
 
-**Från**
+En entitet ska tillåta att dess *behavior* förändras utan att modifiera dess source code.
+
+Vi uppnår detta detta genom att undvika att vara beroende av en specifik implementation, och istället använda oss av abstrakta klasser eller interfaces.
+
+Exempel:
+
+Inloggningssystem för en skola där vi har elev, lärare och personal.
 
 ```
-      public static void Run()
-        {
-            List<Person> _applicants = new List<Person>
-        {
-            new Person {Name="Hank", },
-            new Person {Name="Tank", EmployeeType = EmployeeType.Manager},
-            new Person {Name= "Frank", EmployeeType= EmployeeType.Executive}
-        };
-            List<Employee> _employees = new List<Employee>();
-            Accounts accountProcessor = new Accounts();
-
-            foreach (var person in _applicants)
-            {
-                _employees.Add(accountProcessor.Create(person));
-            }
-            foreach (var emp in _employees)
-            {
-                System.Console.WriteLine($"{emp.Name}: {emp.Email}  IsManager: {emp.IsManager}  IsExecutive: {emp.IsExecutive}");
-            }
-        }
-```
-
-**Till**
-
-```
-    public class Solution
+class LoginService
+{
+    public void Login(user)
     {
-        public static void Run()
+        if(user == "elev) {
+            // Kolla elevens credentials
+        } else if(user == "lärare")
         {
-            List<IApplicant> _applicants = new List<IApplicant>
-        {
-            new Person {Name="Hank", },
-            new Executive {Name="Tank"},
-            new Manager {Name= "Frank"}
-        };
-            List<Employee> _employees = new List<Employee>();
-
-            foreach (var person in _applicants)
-            {
-                _employees.Add(person.AccountProcessor.Create(person));
-            }
-            foreach (var emp in _employees)
-            {
-                System.Console.WriteLine($"{emp.Name}: {emp.Email}  IsManager: {emp.IsManager}  IsExecutive: {emp.IsExecutive}");
-            }
+            // kolla lärarens credentials
         }
+        ...osv
     }
+}
 
 ```
 
+Om vi även skulle lägga till inloggningsmöjligheter för extern personal hade vi behövt gå in och modifiera koden.
 
+Som sagt så uppnår vi Open/Closed genom att istället använda oss av abstraktioner.
+
+´´´
+interface ILogin
+{
+    void CheckCredentials(ILoginable user);
+}
+´´´
+
+```
+class ElevAuthentication : ILogin
+{
+    // Kolla elevens credentials
+}
+´´´
+
+```
+class LärareAuthentication : ILogin
+{
+    // Kolla lärarens credentials
+}
+´´´
 
 #### Liskow Substititution Principle
 
 **Subtypes must be substitutable for their base types**
 
+och/eller
+
+**Objects in program should be replaceable with instances of their subtypes without altering the correctness of the program**
+
+och/eller
+
+**Liskov's Substitution Principle says that each class that inherits from another can be used as its parent without having to know the differences between them.**
+
 Denna princip handlar om väldesignada arv. När vi ärver från en basklass, måste vi kunna byta ut våra subklasser mot den basklassen utan problem.
 
 Det handlar mer om beteende, än attribut.
+
+Vi uppnår detta genom att se till så att beteendet i vår sub-class respekterar kontraktet som har givits och etablerats från the super-class. 
+
+Alltså om du vill vara som mig, så måste du bete dig som mig.
 
 ```
  class HealthyActivity
@@ -174,6 +169,13 @@ Det handlar mer om beteende, än attribut.
 
 **No code should be forced to depend on methods it does not use**
 
+och/eller
+
+**A client should only know the methods they are going to use and not those that they are not going to use.**
+
+Vi uppnår detta genom att definera interfaces kontrakt baserat på clients som använder dem, och inte på de implementationer som vi skulle kunna ha.
+
+
 #### Dependency Inversion Principle
 
 **Depend upon abstractions. Do not depend on concrete classes.**
@@ -181,6 +183,8 @@ Det handlar mer om beteende, än attribut.
 Våra high-level components ska inte vara beroende av våra low-level components, men bägge ska vara beroende av en abstraktion.
 
 En high-level component är en klass med beteende definerat i form av andra, low-level components.
+
+Vi uppnår detta genom att injicera dependencies i våra constructors och att lita till interfaces istället för konkreta implementationer.
 
 **High-level**
 
@@ -198,6 +202,17 @@ public abstract class Pizza {
 	string Name;
 }
 ```
+
+#### Övningar
+
+###### Single-Responsibility Principle
+
+1.
+
+	[Single-Responsibility Principle](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/cars/setup) - SRP
+
+Ändra klassen och bryt ned till klasser och metoder som följer SRP.
+
 
 
 
