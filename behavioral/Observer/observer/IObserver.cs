@@ -2,6 +2,6 @@ namespace Observer.observer
 {
     public interface IObserver
     {
-        void Update(float temp, float humidity, float pressure);
+        void Update(int temp, float humidity, float pressure);
     }
 }

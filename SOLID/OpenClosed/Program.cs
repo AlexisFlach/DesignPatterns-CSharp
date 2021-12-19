@@ -1,5 +1,6 @@
-﻿using OpenClosed.Applicants.Setup;
-using OpenClosed.Applicants.Solution;
+﻿using OpenClosed.Pizza.Setup;
 
 
-Solution.Run();
+
+
+BadPizza.Run();

@@ -1,4 +1,4 @@
-namespace OpenClosed.Pizza
+namespace OpenClosed.Pizza.Setup
 {
     class PizzaStore
     {

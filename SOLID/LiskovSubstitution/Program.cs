@@ -1,4 +1,4 @@
-﻿using LiskovSubstitution;
+﻿using LiskovSubstitution.Cars.Setup;
 
 
-Smokes.Run();
+Cars.Run();

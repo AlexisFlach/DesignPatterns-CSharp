@@ -207,24 +207,76 @@ public abstract class Pizza {
 
 ###### Single-Responsibility Principle
 
-1.
+1. Cars
 
-[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/cars/setup) - SRP
+[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/cars/setup) - CARS
 
 Ändra klassen och bryt ned till klasser och metoder som följer SRP.
 
+2. UserInputs
+
+[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/userinputs/setup) - User inputs
+
+Ändra klassen och bryt ned till klasser och metoder som följer SRP.
+
+###### Open/Closed Principle
+
+1. CardMaker
+
+Här har vi en applikation som ska bakar pizzor Baserat på PizzaType så bakas en viss typ av pizza.
+Lägger vi till en ny PizzaType så behöver vi gå in i metoden och modifiera. 
+
+```
+   public void MakePizza(PizzaType type)
+        {
+            PizzaIngredients pizzaIngredients;
+            switch (type)
+            {
+                case PizzaType.American:
+                    pizzaIngredients = new PizzaIngredients("Tripple cheese", "Bacon");
+                    _oven.Bake(pizzaIngredients);
+                    pizzaIngredients.PrintIngredients();
+                    break;
+                case PizzaType.Italian:
+                    pizzaIngredients = new PizzaIngredients("Tomato Sauce", "Cheese");
+                    _oven.Bake(pizzaIngredients);
+                    break;
+                case PizzaType.Vegetarian:
+                    pizzaIngredients = new PizzaIngredients("Sallad");
+                    _oven.Bake(pizzaIngredients);
+                    break;
+                default:
+                    break;
+
+            }
+        }
+```
+
+Tillämpa Open/closed så att vi kan lägga till en typ av Pizza utan att modifiera koden.
+
+###### Liskov Substitution Principle
+
+1. 
+
+[Liskow Substitution](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/Substitution/Cars/Setup) - Liskov  Substitution
+
+1. Ändra programmet så att det följer Liskov Substitution principle
+
+###### Interface Segregation Principle
+
+[Interface Segregation](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/InterfaceSegregation/Setup/NoISP) - Interface Segregation
+
+1. Ändra programmet så att det följer Interface segregation principle
 
 
+###### Dependency Inversion
+
+[Dependency Inversion](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/DependencyInversion/CalculatorApp) - Dependency Inversion
+
+1. Lägg till yterliggare funktioner som division och multiplikation. Fundera på vilken annan princip vi följer i detta exempel.
 
 
-
-
-
-
-
-
-
-
+Länkar:
 
 https://www.youtube.com/watch?v=id_Ltb6EbvU&ab_channel=CodeRadiance
 

@@ -1,5 +1,4 @@
-﻿using System;
-using Singleton.Singleton;
+﻿using Singleton.Singleton;
 namespace Singleton
 {
     class Program
