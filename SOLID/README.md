@@ -209,19 +209,21 @@ public abstract class Pizza {
 
 1. Cars
 
-[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/cars/setup) - CARS
+[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/SingleResponsibility/Cars/Setup) - CARS
 
 Ändra klassen och bryt ned till klasser och metoder som följer SRP.
 
 2. UserInputs
 
-[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/userinputs/setup) - User inputs
+[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/SingleResponsibility/UserInputs) - User inputs
 
 Ändra klassen och bryt ned till klasser och metoder som följer SRP.
 
 ###### Open/Closed Principle
 
-1. CardMaker
+1. Pizza
+
+[OpenClosed](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/OpenClosed/Pizza/Setup) - OpenClosed
 
 Här har vi en applikation som ska bakar pizzor Baserat på PizzaType så bakas en viss typ av pizza.
 Lägger vi till en ny PizzaType så behöver vi gå in i metoden och modifiera. 
@@ -264,7 +266,7 @@ Tillämpa Open/closed så att vi kan lägga till en typ av Pizza utan att modifi
 
 ###### Interface Segregation Principle
 
-[Interface Segregation](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/InterfaceSegregation/Setup/NoISP) - Interface Segregation
+[Interface Segregation](https://github.com/AlexisFlach/DesignPatterns-CSharp/blob/main/SOLID/InterfaceSegregation/Setup/NoISP.cs) - Interface Segregation
 
 1. Ändra programmet så att det följer Interface segregation principle
 
