@@ -258,7 +258,7 @@ Tillämpa Open/closed så att vi kan lägga till en typ av Pizza utan att modifi
 
 1. 
 
-[Liskow Substitution](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/Substitution/Cars/Setup) - Liskov  Substitution
+[Liskow Substitution](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/LiskovSubstitution/Cars/Setup) - Liskov  Substitution
 
 1. Ändra programmet så att det följer Liskov Substitution principle
 
