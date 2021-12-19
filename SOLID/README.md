@@ -209,7 +209,7 @@ public abstract class Pizza {
 
 1.
 
-	[Single-Responsibility Principle](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/cars/setup) - SRP
+[SRP](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID/singleresponsibility/cars/setup) - SRP
 
 Ändra klassen och bryt ned till klasser och metoder som följer SRP.
 
