@@ -23,10 +23,3 @@ Förenklar designen genom att identifiera enkla sätt att skapa relationer mella
 Identifierar kommunikationsmönster mellan objekt.
 
 
-#### Tips på hur du använder detta repot:
-
-1. SOLID
-
-Läs igenom texten om SOLID.
-
-	[Solid](https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID) - SOLID README

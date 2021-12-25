@@ -1,5 +1,7 @@
 # SOLID
 
+https://github.com/AlexisFlach/DesignPatterns-CSharp/tree/main/SOLID
+
 SOLID är en samling designprinciper som används i OOP. Principerna bakom SOLID togs fram av Robert C. Martin år 2000 och tar fasta på det faktum software förändras, och därmed bli mer komplext. 
 
 Utan goda designprinciper kommer system få svårt att hantera dessa förändringar. Det stora målet med SOLID är att minska beroenden, så att när en del av applikationen förändras så påverkar inte det övrig kod. Övriga nyttor är att designen blir enklare att underhålla och förlänga.
@@ -291,46 +293,4 @@ https://www.youtube.com/watch?v=70qA7XPAuNE&ab_channel=CodeRadiance
 https://www.youtube.com/watch?v=J6dWkStHEWk&ab_channel=CodeRadiance
 
 https://www.youtube.com/watch?v=-3UXq2krhyw
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

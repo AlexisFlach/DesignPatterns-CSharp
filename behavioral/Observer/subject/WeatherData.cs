@@ -6,7 +6,7 @@ namespace Observer.subject
     public class WeatherData : ISubject
     {   
         private List<IObserver> _observers;
-        private float _temperature;
+        private int _temperature;
         private float _humidity;
         private float _pressure;
         public WeatherData()
@@ -33,7 +33,7 @@ namespace Observer.subject
         {
             NotifyObserver();
         }
-        public void SetMeasurements(float temp, float humidity, float pressure)
+        public void SetMeasurements(int temp, float humidity, float pressure)
         {
             _temperature = temp;
             _humidity = humidity;

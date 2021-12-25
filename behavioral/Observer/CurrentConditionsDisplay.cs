@@ -17,15 +17,16 @@ namespace Observer
             _weatherdata = weatherData;
             weatherData.RegisterObserver(this);
         }
-        public void Update(float temp, float humidity, float pressure)
+        public void Display()
+        {
+            Console.WriteLine("Current conditions: " + _temperature + " degrees and " + _humidity + "% humidity");
+        }
+
+        public void Update(int temp, float humidity, float pressure)
         {
             _temperature = temp;
             _humidity = humidity;
             Display();
-        }
-        public void Display()
-        {
-            Console.WriteLine("Current conditions: " + _temperature + " degrees and " + _humidity + "% humidity");
         }
     }
 }

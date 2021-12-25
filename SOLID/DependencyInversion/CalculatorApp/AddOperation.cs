@@ -1,10 +1,10 @@
 namespace DependencyInversion.CalculatorApp
 {
-public class AddOperation : ICalculatorOperation
-{
-    public double Calculate(double x, double y)
+    public class AddOperation : ICalculatorOperation
     {
-        return x + y;
+        public double Calculate(double x, double y)
+        {
+            return x + y;
+        }
     }
-}
 }
