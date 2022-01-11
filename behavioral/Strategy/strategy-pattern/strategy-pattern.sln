@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckSim", "DuckSim\DuckSim.csproj", "{214308BD-E0EB-435C-BD24-A565C2DFDB9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckSim.Tests", "DuckSim.Tests\DuckSim.Tests.csproj", "{8D33DF76-44E7-4200-815D-810E4DB1F53A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{214308BD-E0EB-435C-BD24-A565C2DFDB9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{214308BD-E0EB-435C-BD24-A565C2DFDB9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{214308BD-E0EB-435C-BD24-A565C2DFDB9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{214308BD-E0EB-435C-BD24-A565C2DFDB9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D33DF76-44E7-4200-815D-810E4DB1F53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D33DF76-44E7-4200-815D-810E4DB1F53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D33DF76-44E7-4200-815D-810E4DB1F53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D33DF76-44E7-4200-815D-810E4DB1F53A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
