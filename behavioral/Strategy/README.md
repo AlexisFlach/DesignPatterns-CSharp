@@ -2,7 +2,7 @@
 
 The Strategy Pattern defines a family of algorithms, encapsulates each one and makes them interchangeable. Strategy lets the algorithm vary independendently from clients that use it.
 
-<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781492077992/files/assets/f0022-01.png" alt="headfirsr" width="300" />
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781492077992/files/assets/f0022-01.png" alt="headfirsr" />
 <br>
 
 #### Design Principles
@@ -16,7 +16,7 @@ The Strategy Pattern defines a family of algorithms, encapsulates each one and m
 
 #### Participants
 
-<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:0201633612/files/graphics/pg316fig01.jpg" alt="headfirsr" width="300" />
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:0201633612/files/graphics/pg316fig01.jpg" alt="headfirsr" />
 <br>
 
 - Strategy (Compositor)
@@ -25,7 +25,7 @@ Declares an interface common to all supported algorithms. Context uses this inte
 - ConcreteStrategy
 Implements the algorithm using the Strategy interface.
 
-- Contect (Composition)
+- Context (Composition)
     - Configured with a ConcreteStrategy object.
     - Maintains a reference to a Strategy Object
     - May define an interface that lets Strategy access data
@@ -55,10 +55,3 @@ https://www.youtube.com/watch?v=v9ejT8FO-7I&ab_channel=ChristopherOkhravi
 https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124
 
 https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8
-
-
-
-
-
-
-
