@@ -1,39 +1,38 @@
-using System.Collections.Generic;
-using Observer.observer;
-
-namespace Observer.subject
+namespace WeatherStation
 {
     public class WeatherData : ISubject
-    {   
-        private List<IObserver> _observers;
-        private int _temperature;
+    {
+        private readonly List<IObserver> _observers;
+        private float _temperature;
         private float _humidity;
         private float _pressure;
+
         public WeatherData()
         {
             _observers = new List<IObserver>();
         }
-         public void RegisterObserver(IObserver o)
-        {
-            _observers.Add(o);
-        }
-        public void NotifyObserver()
+        public void NotifyObservers()
         {
             foreach (IObserver observer in _observers)
             {
                 observer.Update(_temperature, _humidity, _pressure);
             }
         }
+        public void RegisterObserver(IObserver o)
+        {
+            _observers.Add(o);
+        }
+
         public void RemoveObserver(IObserver o)
         {
-            var observer = _observers.IndexOf(o);
             _observers.Remove(o);
         }
+
         public void MeasurementsChanged()
         {
-            NotifyObserver();
+            NotifyObservers();
         }
-        public void SetMeasurements(int temp, float humidity, float pressure)
+        public void SetMeasurements(float temp, float humidity, float pressure)
         {
             _temperature = temp;
             _humidity = humidity;

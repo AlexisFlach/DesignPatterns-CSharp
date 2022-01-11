@@ -1,7 +1,7 @@
-namespace Observer
+namespace WeatherStation
 {
     public interface IDisplayElement
     {
-        
+         string Display();
     }
 }
