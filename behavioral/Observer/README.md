@@ -49,9 +49,11 @@ Implements the Observer updating interface to keep its state consistent with the
 
 
 ###### Commands
+```
 dotnet new sln -o observer-pattern
 dotnet new classlib -o WeatherStation
 dotnet sln add WeatherStation/WeatherStation.csproj
 dotnet new xunit -o WeatherStation.Tests
 dotnet sln add WeatherStation.Tests/WeatherStation.Tests.csproj
 dotnet add WeatherStation.Tests/WeatherStation.Tests.csproj reference WeatherStation/WeatherStation.csproj
+```
