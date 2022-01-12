@@ -4,6 +4,17 @@ The Singleton Pattern ensures a class has only one instance, and provides a glob
 
 <img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781492077992/files/assets/f0177-01.png">
 
+#### Participants
+
+<img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:0201633612/files/graphics/pg127fig01.jpg">
+
+- Singleton
+
+Defines an Instance operation that lets clients access its unique instance.
+
+May be responsible for creating its own unique instance.
+
+
 ###### Commands
 
 ```
