@@ -35,7 +35,7 @@ Asks the command to carry out the request.
 #### Collaborations
 ---
 
-- point
+
 
 ###### Commands
 ```
