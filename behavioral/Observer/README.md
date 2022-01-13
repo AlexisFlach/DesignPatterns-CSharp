@@ -5,6 +5,7 @@ The Observer Pattern defines a one-to-many dependency between objects so that wh
 <img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781492077992/files/assets/f0057-01.png" alt="headfirst"/>
 
 #### Design Principles
+---
 
 **Identify the aspects of your code that vary and separate them from what stays the same**
 
@@ -25,6 +26,7 @@ We compose any number of Observers with their Subject, at runtime by composition
 Strive for loosely coupled designs between objects that interact. When two objects are loosely coupled, they can interact, but they typically have very little knowledge of each other.
 
 #### Participants
+---
 
 <img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:0201633612/files/graphics/pg294fig01.jpg">
 <br>
