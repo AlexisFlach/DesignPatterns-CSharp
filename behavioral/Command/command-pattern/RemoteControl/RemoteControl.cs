@@ -1,29 +1,31 @@
 using System.Text;
 
-namespace RemoteControl 
+namespace RemoteControl
 {
-    public class SuperRemoteControl
+    public class RemoteControl
     {
-       Command[] OnCommands;
-       Command[] OffCommands; 
-       Command UndoCommand;
+        ICommand[] OnCommands;
+        ICommand[] OffCommands;
+        ICommand UndoCommand;
 
-       public SuperRemoteControl() {
-           OnCommands = new Command[7];
-           OffCommands = new Command[7];
+        NoCommand NoCommand;
 
-           Command NoCommand = new NoCommand();
+        public RemoteControl()
+        {
+            OnCommands = new ICommand[7];
+            OffCommands = new ICommand[7];
 
-           for(int i = 0; i < 7; i++) {
+            NoCommand = new NoCommand();
+
+            for(int i = 0; i < 7; i++) {
                OnCommands[i] = NoCommand;
                OffCommands[i] = NoCommand;
            }
 
            UndoCommand = NoCommand;
 
-       }
-            
-            public void SetCommand(int slot, Command onCommand, Command offCommand) {
+        }
+        public void SetCommand(int slot, ICommand onCommand, ICommand offCommand) {
                 OnCommands[slot] = onCommand;
                 OffCommands[slot] = offCommand;
             }

@@ -1,6 +1,6 @@
 namespace RemoteControl
 {
-    public class LightOffCommand : Command
+    public class LightOffCommand : ICommand
     {
         Light light;
 

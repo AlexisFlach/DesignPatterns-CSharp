@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteControl", "RemoteControl\RemoteControl.csproj", "{3B7BD5B7-1021-49B5-B82F-AD7E2E1D6D81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteControl.Tests", "RemoteControl.Tests\RemoteControl.Tests.csproj", "{203CD674-21AA-497E-BEC9-2A1DEB3A0D2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B7BD5B7-1021-49B5-B82F-AD7E2E1D6D81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7BD5B7-1021-49B5-B82F-AD7E2E1D6D81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7BD5B7-1021-49B5-B82F-AD7E2E1D6D81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7BD5B7-1021-49B5-B82F-AD7E2E1D6D81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{203CD674-21AA-497E-BEC9-2A1DEB3A0D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{203CD674-21AA-497E-BEC9-2A1DEB3A0D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{203CD674-21AA-497E-BEC9-2A1DEB3A0D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{203CD674-21AA-497E-BEC9-2A1DEB3A0D2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
