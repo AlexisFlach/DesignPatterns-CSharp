@@ -6,20 +6,21 @@ The Observer Pattern defines a one-to-many dependency between objects so that wh
 
 #### Design Principles
 
-- Identify the aspects of your code that vary and separate them from what stays the same
+**Identify the aspects of your code that vary and separate them from what stays the same**
 
 What varies in the Observer Pattern is the state of the Subject and the number and types of Observers.
+
 With this pattern we can vary the objects that that are dependent on the state of the object, without having to change that Subject.
 
-- Program to an interface, not an implementation
+**Program to an interface, not an implementation**
 
-We keep things loosely coupled
+We keep things loosely coupled.
 
-- Favor Composition over inheritance
+**Favor Composition over inheritance**
 
 We compose any number of Observers with their Subject, at runtime by composition.
 
-- Loose Coupling
+**Loose Coupling**
 
 Strive for loosely coupled designs between objects that interact. When two objects are loosely coupled, they can interact, but they typically have very little knowledge of each other.
 
@@ -28,20 +29,21 @@ Strive for loosely coupled designs between objects that interact. When two objec
 <img src="https://learning.oreilly.com/api/v2/epubs/urn:orm:book:0201633612/files/graphics/pg294fig01.jpg">
 <br>
 
-- Subject
+**Subject**
 
 Knows its observers. Any number of Observers may observe a subject.
 Also provides an interface for attaching and detaching Observer objects.
 
-- Observer
+**Observer**
+
 Defines an updating interfave for objects that should be notified of changes in a subject.
 
-- ConcreteSubject
+**ConcreteSubject**
 
 Stores state of interest to ConcreteObserver objects.
 Sends a notification to its observers when its state changes.
 
-- ConcreteObserver
+**ConcreteObserver**
 
 Maintains a reference to a ConcreteSubject object.
 Stores stat that should stay consistent with the subject's.
